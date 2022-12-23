@@ -13,6 +13,11 @@ root.render(
         <h1>Weather App</h1>
 
         <Search />
+
+        <div className="link">
+          <a href="https://github.com/oksanazah/weather-app-react">Open-source code</a>, by Oksana
+          Zakharchenko
+        </div>
       </div>
     </div>
   </React.StrictMode>

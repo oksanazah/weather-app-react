@@ -17,6 +17,10 @@ h1 {
   font-weight: 600;
 }
 
+.link {
+  margin-top: 200px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
