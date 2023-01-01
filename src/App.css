@@ -1,5 +1,9 @@
-.App {
+.top-search {
   text-align: center;
+}
+
+.link {
+  font-size: 12px;
 }
 
 ul {
@@ -15,10 +19,6 @@ h1 {
   margin: 20px;
   font-size: 24px;
   font-weight: 600;
-}
-
-.link {
-  margin-top: 200px;
 }
 
 .App-logo {
