@@ -1,10 +1,17 @@
-import React from 'react';
+import { useContext } from 'react';
 
-export default function WeatherForcastConvert(props) {
-  return (
-    <div>
-      <span>{Math.round(props.celsiusMax)}°</span>
-      <span id="night"> {Math.round(props.celsiusMin)}°</span>
-    </div>
-  );
+import { CurrentUnitContext } from './App';
+
+export default function WeatherForcastConvert({ celsiusMax, celsiusMin }) {
+	const { currentUnit } = useContext(CurrentUnitContext);
+
+	const convert = (temp) =>
+		currentUnit === 'celsius' ? temp : (temp * 9) / 5 + 32;
+
+	return (
+		<div>
+			<span>{Math.round(convert(celsiusMax))}°</span>
+			<span id='night'> {Math.round(convert(celsiusMin))}°</span>
+		</div>
+	);
 }

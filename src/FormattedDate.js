@@ -1,24 +1,30 @@
-import React from 'react';
+export default function FormattedDate({ date }) {
+	let currentHour = date.getHours();
 
-export default function FormattedDate(props) {
-  let currentHour = props.date.getHours();
+	if (currentHour < 10) {
+		currentHour = `0${currentHour}`;
+	}
 
-  if (currentHour < 10) {
-    currentHour = `0${currentHour}`;
-  }
+	let currentMinutes = date.getMinutes();
 
-  let currentMinutes = props.date.getMinutes();
+	if (currentMinutes < 10) {
+		currentMinutes = `0${currentMinutes}`;
+	}
 
-  if (currentMinutes < 10) {
-    currentMinutes = `0${currentMinutes}`;
-  }
+	let days = [
+		'Sunday',
+		'Monday',
+		'Tuesday',
+		'Wednesday',
+		'Thursday',
+		'Friday',
+		'Saturday',
+	];
+	let currentDay = days[date.getDay()];
 
-  let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  let currentDay = days[props.date.getDay()];
-
-  return (
-    <div>
-      {currentDay} {currentHour}:{currentMinutes}
-    </div>
-  );
+	return (
+		<div>
+			{currentDay} {currentHour}:{currentMinutes}
+		</div>
+	);
 }

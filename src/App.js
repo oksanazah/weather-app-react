@@ -1,24 +1,34 @@
-import React from 'react';
+import { useState, createContext } from 'react';
+
 import './App.css';
+
 import Weather from './Weather';
 
+export const CurrentUnitContext = createContext('celsius');
+
 function App() {
-  return (
-    <div className="App">
-      <div className="container">
-        <div className="top-search">
-          <h1>Weather App</h1>
-        </div>
+	const [currentUnit, setCurrentUnit] = useState('celsius');
 
-        <Weather defaultCity="London" />
+	return (
+		<CurrentUnitContext.Provider value={{ currentUnit, setCurrentUnit }}>
+			<div className='App'>
+				<div className='container'>
+					<div className='top-search'>
+						<h1>Weather App</h1>
+					</div>
 
-        <div className="link">
-          <a href="https://github.com/oksanazah/weather-app-react">Open-source code</a>, by Oksana
-          Zakharchenko
-        </div>
-      </div>
-    </div>
-  );
+					<Weather defaultCity='London' />
+
+					<div className='link'>
+						<a href='https://github.com/oksanazah/weather-app-react'>
+							Open-source code
+						</a>
+						, by Oksana Zakharchenko
+					</div>
+				</div>
+			</div>
+		</CurrentUnitContext.Provider>
+	);
 }
 
 export default App;

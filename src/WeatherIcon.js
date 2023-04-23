@@ -1,10 +1,9 @@
-import React from 'react';
+export default function WeatherIcon({ dataIcon }) {
+	const icon = `/images/${dataIcon.icon}.png`;
 
-export default function WeatherIcon(props) {
-  let icon = `/images/${props.dataIcon.icon}.png`;
-  return (
-    <div>
-      <img src={icon} alt={props.dataIcon.description} />
-    </div>
-  );
+	return (
+		<div>
+			<img src={icon} alt={dataIcon.description} />
+		</div>
+	);
 }
